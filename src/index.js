@@ -1,3 +1,4 @@
+import img from "./img/logo.png";
 // Use namespace to prevent pollution of the global namespace
 var apifilms = apifilms || {};
 
@@ -6,7 +7,7 @@ apifilms.app = (function() {
 	if (typeof document !== "undefined") {
 		const app = document.getElementById("root");
 		const logo = document.createElement("img");
-		logo.src = "images/logo.png";
+		logo.src = "img/logo.png";
 
 		const container = document.createElement("div");
 		container.setAttribute("class", "container");
