@@ -16,16 +16,16 @@ module.exports = {
 				use: [
 					{
 						loader: "html-loader",
-						options: { minimize: true },
+						options: { minimize: false },
 					},
 				],
 			},
 			{
-				test: /\.(scss|sass)$/,
+				test: /\.(scss|sass|css)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
 					"css-loader",
-					"postcss-loader",
+					"postcss-loader", // it requires a postcss config file
 					"sass-loader",
 				],
 			},
@@ -47,7 +47,7 @@ module.exports = {
 			filename: "./index.html",
 		}),
 		new MiniCssExtractPlugin({
-			filename: "[name].css",
+			filename: "./[name].css",
 			chunkFilename: "[id].css",
 		}),
 	],
