@@ -1,7 +1,7 @@
-import img from "./img/logo.png";
+import img from "./img/tvm_api.png";
 import style from "./scss/style.scss";
-import logo from "./components/logo";
+import hero from "./components/hero";
 import apiCall from "./components/apiCall";
 
-logo();
+hero();
 apiCall();

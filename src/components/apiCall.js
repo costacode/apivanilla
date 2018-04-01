@@ -5,7 +5,8 @@ export default function() {
 	// Open a new connection, using the GET request on the URL endpoint
 	request.open(
 		"GET",
-		"https://ghibliapi.herokuapp.com/films",
+		// "https://ghibliapi.herokuapp.com/films",
+		"http://api.tvmaze.com/shows",
 		true
 	);
 
@@ -14,7 +15,7 @@ export default function() {
 		var data = JSON.parse(this.responseText);
 
 		if (request.status >= 200 && request.status < 400) {
-			data.forEach(movie => {
+			data.forEach(show => {
 				// console.log(movie.title);
 				// console.log("movie description: " + movie.description);
 				// create a div with a card class
@@ -23,23 +24,35 @@ export default function() {
 
 				// Create an h1 and set the text content to the film's title
 				const title = document.createElement("h1");
-				title.textContent = movie.title;
+				title.textContent = show.name;
 
 				// Create a p and set the text content to the film's description
 				const description = document.createElement("p");
 
 				// Limit chars
-				movie.description = movie.description.substring(0, 300);
-				description.textContent = `${movie.description}...`;
+				// show.summary = show.summary.substring(0, 300);
+				// description.textContent = `${show.summary}...`;
 
 				// all chars
-				// description.textContent = movie.description;
+				description.textContent = show.summary.replace(
+					/<\/?[^>]+>/gi,
+					""
+				);
+
+				// image
+				const imageShow = document.createElement("img");
+				imageShow.src = show.image.medium;
+
+				const infoShow = document.createElement("div");
+				infoShow.setAttribute("class", "info-show");
 
 				// Append the cards to the container element
 				const container = document.querySelector(".container");
 				container.appendChild(card);
-				card.appendChild(title);
-				card.appendChild(description);
+				card.appendChild(imageShow);
+				card.appendChild(infoShow);
+				infoShow.appendChild(title);
+				infoShow.appendChild(description);
 			});
 			const loader = document.querySelector(".loader");
 			loader.classList.add("hide");
