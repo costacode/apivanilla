@@ -7,11 +7,6 @@ img {
   max-width: 100%;
   display: block; }
 
-h1 {
-  font-size: 24px;
-  margin: 0;
-  line-height: 1; }
-
 #root {
   max-width: 430px;
   margin: 0 auto;
@@ -30,7 +25,18 @@ h1 {
   text-align: center;
   padding: 1rem 0;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #333; }
+  border-bottom: 1px solid #333;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+  .header img {
+    max-width: 40%; }
+  .header .intro {
+    font-size: 18px;
+    padding: 2rem; }
 
 .logo-wrap {
   text-align: center;
@@ -41,6 +47,38 @@ h1 {
 
 .info-show {
   padding: 1rem; }
+  .info-show h1 {
+    font-size: 24px;
+    margin: 0;
+    line-height: 1;
+    position: relative;
+    left: -1rem;
+    padding: 10px 1rem;
+    background-color: #c4d2ad;
+    max-width: 50%; }
+  .info-show ul {
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    padding: 0; }
+    .info-show ul li {
+      margin-right: 5px; }
+
+.meta {
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px; }
+  .meta span {
+    color: #6cada7;
+    margin-left: 5px; }
+
+.more {
+  color: #153b37;
+  font-weight: 700;
+  margin-left: 10px;
+  text-decoration: none; }
+  .more:hover {
+    color: #57a29a; }
 
 .container {
   display: -ms-grid;
@@ -55,22 +93,23 @@ h1 {
       align-content: center; }
   @media screen and (min-width: 600px) {
     .container {
-      -ms-grid-columns: (1fr)[3];
-          grid-template-columns: repeat(3, 1fr); } }
+      -ms-grid-columns: (1fr)[1];
+          grid-template-columns: repeat(1, 1fr); } }
   @media screen and (min-width: 1000px) {
     .container {
-      -ms-grid-columns: (1fr)[5];
-          grid-template-columns: repeat(5, 1fr); } }
-  @media screen and (min-width: 1200px) {
-    .container {
-      -ms-grid-columns: (1fr)[6];
-          grid-template-columns: repeat(6, 1fr); } }
+      -ms-grid-columns: (1fr)[2];
+          grid-template-columns: repeat(2, 1fr); } }
 
 .card {
   background-color: #f3f3f3;
-  border: 1px solid gray; }
-  .card img {
-    margin: 0 auto; }
+  border: 1px solid #c8dedc;
+  display: -ms-flexbox;
+  display: flex; }
+  .card figure {
+    min-width: 30%;
+    margin: 0; }
+    .card figure img {
+      margin: 0 auto; }
 
 .hide {
   display: none; }

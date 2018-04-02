@@ -9,12 +9,6 @@ img {
 	display: block;
 }
 
-h1 {
-	font-size: 24px;
-	margin: 0;
-	line-height: 1;
-}
-
 #root {
 	max-width: 430px;
 	margin: 0 auto;
@@ -37,6 +31,18 @@ h1 {
 	padding: 1rem 0;
 	margin-bottom: 1rem;
 	border-bottom: 1px solid #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	img {
+		max-width: 40%;
+	}
+
+	.intro {
+		font-size: 18px;
+		padding: 2rem;
+	}
 }
 
 .logo-wrap {
@@ -50,6 +56,48 @@ h1 {
 
 .info-show {
 	padding: 1rem;
+
+	h1 {
+		font-size: 24px;
+		margin: 0;
+		line-height: 1;
+		position: relative;
+		left: -1rem;
+		padding: 10px 1rem;
+		background-color: #c4d2ad;
+		max-width: 50%;
+	}
+
+	ul {
+		display: flex;
+		list-style: none;
+		padding: 0;
+
+		li {
+			margin-right: 5px;
+		}
+	}
+}
+
+.meta {
+	display: inline-block;
+	margin: 0;
+	margin-right: 10px;
+	span {
+		color: #6cada7;
+		margin-left: 5px;
+	}
+}
+
+.more {
+	color: #153b37;
+	font-weight: 700;
+	margin-left: 10px;
+	text-decoration: none;
+
+	&:hover {
+		color: #57a29a;
+	}
 }
 
 .container {
@@ -61,24 +109,25 @@ h1 {
 	align-content: center;
 
 	@media screen and (min-width: 600px) {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 	}
 
 	@media screen and (min-width: 1000px) {
-		grid-template-columns: repeat(5, 1fr);
-	}
-
-	@media screen and (min-width: 1200px) {
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 .card {
 	background-color: #f3f3f3;
-	border: 1px solid gray;
+	border: 1px solid #c8dedc;
+	display: flex;
 
-	img {
-		margin: 0 auto;
+	figure {
+		min-width: 30%;
+		margin: 0;
+		img {
+			margin: 0 auto;
+		}
 	}
 }
 

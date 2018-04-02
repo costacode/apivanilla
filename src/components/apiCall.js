@@ -22,37 +22,81 @@ export default function() {
 				const card = document.createElement("div");
 				card.setAttribute("class", "card");
 
-				// Create an h1 and set the text content to the film's title
+				// get image
+				const imageWrap = document.createElement("figure");
+				const imageShow = document.createElement("img");
+				imageShow.src = show.image.medium;
+				imageWrap.appendChild(imageShow);
+
+				// Title
 				const title = document.createElement("h1");
 				title.textContent = show.name;
 
-				// Create a p and set the text content to the film's description
+				// Description
 				const description = document.createElement("p");
+				// Limit chars and delete html tags
+				show.summary = show.summary
+					.substring(0, 280)
+					.replace(/<\/?[^>]+>/gi, "");
+				description.textContent = `${show.summary}...`;
 
-				// Limit chars
-				// show.summary = show.summary.substring(0, 300);
-				// description.textContent = `${show.summary}...`;
+				// all chars without html tags
+				// description.textContent = show.summary.replace(
+				// 	/<\/?[^>]+>/gi,
+				// 	""
+				// );
 
-				// all chars
-				description.textContent = show.summary.replace(
-					/<\/?[^>]+>/gi,
-					""
-				);
+				// More link
+				const showUrl = document.createElement("a");
+				showUrl.href = show.url;
+				showUrl.setAttribute("class", "more");
+				showUrl.setAttribute("target", "_blank");
+				showUrl.textContent = "More";
 
-				// image
-				const imageShow = document.createElement("img");
-				imageShow.src = show.image.medium;
+				// Genres
+				const infoList = document.createElement("ul");
+				for (let i = 0; i < show.genres.length; i++) {
+					let item = show.genres[i];
+					let li = document.createElement("li");
+					li.appendChild(document.createTextNode(item + ","));
+					infoList.appendChild(li);
+				}
 
+				// Premiered
+				const premiered = document.createElement("p");
+				premiered.setAttribute("class", "meta");
+				const premieredData = document.createElement("span");
+				premiered.textContent = "Premiered";
+				premieredData.textContent = show.premiered;
+				premiered.appendChild(premieredData);
+
+				// Rating
+				const rating = document.createElement("p");
+				rating.setAttribute("class", "meta");
+				const ratingData = document.createElement("span");
+				rating.textContent = "Rating";
+				ratingData.textContent = show.rating.average;
+				rating.appendChild(ratingData);
+
+				// info container
 				const infoShow = document.createElement("div");
 				infoShow.setAttribute("class", "info-show");
 
 				// Append the cards to the container element
 				const container = document.querySelector(".container");
 				container.appendChild(card);
-				card.appendChild(imageShow);
+
+				// Append image and info to the card element
+				card.appendChild(imageWrap);
 				card.appendChild(infoShow);
+
+				// Append title and description to the info element
 				infoShow.appendChild(title);
 				infoShow.appendChild(description);
+				infoShow.appendChild(infoList);
+				infoShow.appendChild(premiered);
+				infoShow.appendChild(rating);
+				description.appendChild(showUrl);
 			});
 			const loader = document.querySelector(".loader");
 			loader.classList.add("hide");
