@@ -66,8 +66,8 @@ img {
 
 .info-show {
 	padding: 1rem;
-	border-bottom: 2rem solid #58a29b;
-	border-left: 2rem solid #58a29b;
+	border-bottom: 2rem solid #c4d2ad;
+	border-left: 2rem solid #c4d2ad;
 
 	h1 {
 		font-size: 24px;
@@ -76,7 +76,7 @@ img {
 		position: relative;
 		left: -1rem;
 		padding: 10px 1rem;
-		background-color: #58a29b;
+		background-color: #c4d2ad;
 		max-width: 90%;
 
 		@media screen and (min-width: 1000px) {
@@ -119,7 +119,7 @@ img {
 
 .container {
 	display: grid;
-	grid-gap: 1rem;
+	grid-gap: 2rem;
 	grid-template-columns: repeat(1, 1fr);
 	grid-auto-rows: minmax(100px, auto);
 	justify-content: center;
@@ -143,7 +143,7 @@ img {
 		margin: 0;
 		img {
 			margin: 0 auto;
-			border-bottom: 2rem solid #58a29b;
+			border-bottom: 2rem solid #c4d2ad;
 		}
 	}
 }
