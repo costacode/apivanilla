@@ -6,7 +6,7 @@ export default function() {
 	request.open(
 		"GET",
 		// "https://ghibliapi.herokuapp.com/films",
-		"http://api.tvmaze.com/shows",
+		"https://api.tvmaze.com/shows",
 		true
 	);
 
