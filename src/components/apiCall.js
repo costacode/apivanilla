@@ -36,7 +36,7 @@ export default function() {
 				const description = document.createElement("p");
 				// Limit chars and delete html tags
 				show.summary = show.summary
-					.substring(0, 280)
+					.substring(0, 180)
 					.replace(/<\/?[^>]+>/gi, "");
 				description.textContent = `${show.summary}...`;
 
@@ -54,13 +54,13 @@ export default function() {
 				showUrl.textContent = "More";
 
 				// Genres
-				const infoList = document.createElement("ul");
-				for (let i = 0; i < show.genres.length; i++) {
-					let item = show.genres[i];
-					let li = document.createElement("li");
-					li.appendChild(document.createTextNode(item + ","));
-					infoList.appendChild(li);
-				}
+				// const infoList = document.createElement("ul");
+				// for (let i = 0; i < show.genres.length; i++) {
+				// 	let item = show.genres[i];
+				// 	let li = document.createElement("li");
+				// 	li.appendChild(document.createTextNode(item + ","));
+				// 	infoList.appendChild(li);
+				// }
 
 				// Premiered
 				const premiered = document.createElement("p");
@@ -74,7 +74,7 @@ export default function() {
 				const rating = document.createElement("p");
 				rating.setAttribute("class", "meta");
 				const ratingData = document.createElement("span");
-				rating.textContent = "Rating";
+				rating.textContent = "Average rating";
 				ratingData.textContent = show.rating.average;
 				rating.appendChild(ratingData);
 
@@ -93,7 +93,7 @@ export default function() {
 				// Append title and description to the info element
 				infoShow.appendChild(title);
 				infoShow.appendChild(description);
-				infoShow.appendChild(infoList);
+				// infoShow.appendChild(infoList);
 				infoShow.appendChild(premiered);
 				infoShow.appendChild(rating);
 				description.appendChild(showUrl);

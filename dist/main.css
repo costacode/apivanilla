@@ -54,7 +54,9 @@ img {
   text-align: left; }
 
 .info-show {
-  padding: 1rem; }
+  padding: 1rem;
+  border-bottom: 2rem solid #c4d2ad;
+  border-left: 2rem solid #c4d2ad; }
   .info-show h1 {
     font-size: 24px;
     margin: 0;
@@ -71,12 +73,13 @@ img {
     display: -ms-flexbox;
     display: flex;
     list-style: none;
-    padding: 0; }
+    padding: 0;
+    margin-bottom: 5px; }
     .info-show ul li {
       margin-right: 5px; }
 
 .meta {
-  display: inline-block;
+  display: block;
   margin: 0;
   margin-right: 10px; }
   .meta span {
@@ -106,17 +109,22 @@ img {
     .container {
       -ms-grid-columns: (1fr)[2];
           grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 1500px) {
+    .container {
+      -ms-grid-columns: (1fr)[3];
+          grid-template-columns: repeat(3, 1fr); } }
 
 .card {
   background-color: #f3f3f3;
-  border: 1px solid #c8dedc;
   display: -ms-flexbox;
   display: flex; }
   .card figure {
+    background-color: gold;
     min-width: 30%;
     margin: 0; }
     .card figure img {
-      margin: 0 auto; }
+      margin: 0 auto;
+      border-bottom: 2rem solid #c4d2ad; }
 
 .hide {
   display: none; }
