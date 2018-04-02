@@ -56,15 +56,15 @@ img {
 
 .info-show {
   padding: 1rem;
-  border-bottom: 2rem solid #c4d2ad;
-  border-left: 2rem solid #c4d2ad; }
+  border-bottom: 1.5rem solid #c4d2ad;
+  border-left: 1.5rem solid #c4d2ad; }
   .info-show h1 {
-    font-size: 24px;
+    font-size: 18px;
     margin: 0;
     line-height: 1;
     position: relative;
     left: -1rem;
-    padding: 10px 1rem;
+    padding: 0.5rem 1rem;
     background-color: #c4d2ad;
     max-width: 90%; }
     @media screen and (min-width: 1000px) {
@@ -125,7 +125,7 @@ img {
     margin: 0; }
     .card figure img {
       margin: 0 auto;
-      border-bottom: 2rem solid #c4d2ad; }
+      border-bottom: 1.5rem solid #c4d2ad; }
 
 .hide {
   display: none; }
